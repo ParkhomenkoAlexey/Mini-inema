@@ -38,7 +38,7 @@ class VideoLooperView: UIView {
         queuePlayer.volume = 0.0
         queuePlayer.play()
         
-        token = queuePlayer.observe(\.currentItem, changeHandler: { (player, _) in
+        token = queuePlayer.observe(\.currentItem, changeHandler: { (player, change) in
             if self.queuePlayer.items().count == 1 {
                 self.addAllVideosToPlayer()
             }
